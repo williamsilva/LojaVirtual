@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "64040466386",
+    "firebase_url": "https://lojavirtualflutter-bbf02.firebaseio.com",
+    "project_id": "lojavirtualflutter-bbf02",
+    "storage_bucket": "lojavirtualflutter-bbf02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64040466386:android:393baec032ee8517",
+        "android_client_info": {
+          "package_name": "br.com.alvorecer.lojavirtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64040466386-he4n36foorrfk698dd11h0t1k0jqfuc0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk4QDnsiOXL9SaiN4s2NRwQ1Td0z3-kZo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
