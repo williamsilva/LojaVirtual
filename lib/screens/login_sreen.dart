@@ -137,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void _onFail(){
     _scaffodkey.currentState.showSnackBar(
         SnackBar(
-          content: Text("Flaha realizar Login!"),
+          content: Text("FaLha realizar Login!"),
           backgroundColor: Colors.redAccent,
           duration: Duration(seconds: 3),
         )

@@ -11,6 +11,7 @@ class UserModel extends Model{
   Map<String, dynamic>userData = Map();
 
   bool isLoading = false;
+
   static UserModel of(BuildContext context) =>
       ScopedModel.of<UserModel>(context);
 
@@ -78,7 +79,7 @@ class UserModel extends Model{
     _auth.sendPasswordResetEmail(email: email);
   }
 
-  bool isLoggeIn(){
+  bool isLoggedIn(){
     return firebaseUser != null;
   }
 

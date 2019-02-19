@@ -12,14 +12,14 @@ class CartModel extends Model {
 
   List<CartBeer> products = [];
 
+  bool isLoading = false;
+
   String couponCode;
   int discountPercentage = 0;
 
-  bool isLoading = false;
-
   CartModel(this.user){
-    /*if(user.isLoggedIn())
-      _loadCartItems();*/
+    if(user.isLoggedIn())
+      _loadCartItems();
   }
 
   static CartModel of(BuildContext context) =>

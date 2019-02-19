@@ -5,6 +5,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:loja_virtual/datas/cart_beer.dart';
 import 'package:loja_virtual/models/cart_model.dart';
 import 'package:loja_virtual/models/user_model.dart';
+import 'package:loja_virtual/screens/cart_screen.dart';
 import 'package:loja_virtual/screens/login_sreen.dart';
 
 class BeerScreen extends StatefulWidget {
@@ -115,7 +116,7 @@ class _BeerScreenState extends State<BeerScreen> {
                   height: 44.0,
                   child: RaisedButton(
                     onPressed: size != null ? () {
-                      if(UserModel.of(context).isLoggeIn()){
+                      if(UserModel.of(context).isLoggedIn()){
                         CartBeer cartBeer = CartBeer();
                         cartBeer.size = size;
                         cartBeer.quantity = 1;
@@ -123,13 +124,18 @@ class _BeerScreenState extends State<BeerScreen> {
                         cartBeer.category = beer.category;
 
                         CartModel.of(context).addCartItem(cartBeer);
+
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => CartScreen())
+                        );
+
                       }else {
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) => LoginScreen())
                         );
                       }
                     } : null,
-                    child: Text(UserModel.of(context).isLoggeIn() ?
+                    child: Text(UserModel.of(context).isLoggedIn() ?
                           "Adicionar ao Carrinho": "Entre para comprar",
                         style: TextStyle(fontSize: 18.0),
                     ),

@@ -16,7 +16,6 @@ class BeerData {
     id = snapshot.documentID;
     title = snapshot.data["title"];
     description = snapshot.data["description"];
-    price =
     price = snapshot.data["price"].toDouble();
     images = snapshot.data["images"];
     sizes = snapshot.data["sizes"];

@@ -53,7 +53,7 @@ class CustomDrawer extends StatelessWidget {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("Olá, ${!model.isLoggeIn() ? "" : model.userData["name"]}",
+                              Text("Olá, ${!model.isLoggedIn() ? "" : model.userData["name"]}",
                                 style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.bold
@@ -61,7 +61,7 @@ class CustomDrawer extends StatelessWidget {
                               ),
                               GestureDetector(
                                 child: Text(
-                                  !model.isLoggeIn() ?
+                                  !model.isLoggedIn() ?
                                   "Entre ou Cadastre-se >" : "Sair",
                                   style: TextStyle(
                                       color: Theme.of(context).primaryColor,
@@ -70,7 +70,7 @@ class CustomDrawer extends StatelessWidget {
                                   ),
                                 ),
                                 onTap: () {
-                                  if(!model.isLoggeIn()){
+                                  if(!model.isLoggedIn()){
                                     Navigator.of(context).push(
                                         MaterialPageRoute(builder: (context)=> LoginScreen())
                                     );
