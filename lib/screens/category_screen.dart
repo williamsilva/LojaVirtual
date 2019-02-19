@@ -53,19 +53,17 @@ class CategoryScreen extends StatelessWidget {
                                     childAspectRatio: 0.65),
                             itemCount: snapshot.data.documents.length,
                             itemBuilder: (context, index) {
-                              return BeerTitle(
-                                  "grid",
-                                  BeerData.fromDocument(
-                                      snapshot.data.documents[index]));
+                              BeerData data = BeerData.fromDocument(snapshot.data.documents[index]);
+                              data.category = this.snapshot.documentID;
+                              return BeerTitle("grid", data);
                             }),
                         ListView.builder(
                             padding: EdgeInsets.all(4.0),
                             itemCount: snapshot.data.documents.length,
                             itemBuilder: (context, index) {
-                              return BeerTitle(
-                                  "list",
-                                  BeerData.fromDocument(
-                                      snapshot.data.documents[index]));
+                              BeerData data = BeerData.fromDocument(snapshot.data.documents[index]);
+                              data.category = this.snapshot.documentID;
+                              return BeerTitle("list", data);
                             })
                       ]);
                 }

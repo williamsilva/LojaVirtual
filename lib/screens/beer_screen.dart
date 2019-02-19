@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual/datas/beer_data.dart';
 
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:loja_virtual/datas/cart_beer.dart';
+import 'package:loja_virtual/models/cart_model.dart';
+import 'package:loja_virtual/models/user_model.dart';
+import 'package:loja_virtual/screens/login_sreen.dart';
 
 class BeerScreen extends StatefulWidget {
 
@@ -110,8 +114,23 @@ class _BeerScreenState extends State<BeerScreen> {
                 SizedBox(
                   height: 44.0,
                   child: RaisedButton(
-                    onPressed: size != null ? () {} : null,
-                    child: Text("Adicionar ao Carrinho",
+                    onPressed: size != null ? () {
+                      if(UserModel.of(context).isLoggeIn()){
+                        CartBeer cartBeer = CartBeer();
+                        cartBeer.size = size;
+                        cartBeer.quantity = 1;
+                        cartBeer.pid = beer.id;
+                        cartBeer.category = beer.category;
+
+                        CartModel.of(context).addCartItem(cartBeer);
+                      }else {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => LoginScreen())
+                        );
+                      }
+                    } : null,
+                    child: Text(UserModel.of(context).isLoggeIn() ?
+                          "Adicionar ao Carrinho": "Entre para comprar",
                         style: TextStyle(fontSize: 18.0),
                     ),
                     color: primaryColor,
