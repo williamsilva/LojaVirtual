@@ -122,6 +122,7 @@ class _BeerScreenState extends State<BeerScreen> {
                         cartBeer.quantity = 1;
                         cartBeer.pid = beer.id;
                         cartBeer.category = beer.category;
+                        cartBeer.productData = beer;
 
                         CartModel.of(context).addCartItem(cartBeer);
 

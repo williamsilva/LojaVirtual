@@ -28,7 +28,7 @@ class CartBeer {
       "pid": pid,
       "quantity": quantity,
       "size": size,
-      //"product": productData.toResumedMap()
+      "product": productData.toResumedMap()
     };
   }
 }
